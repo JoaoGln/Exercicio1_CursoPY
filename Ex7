@@ -1,0 +1,48 @@
+sair = input('Deseja fazer algum cálculo? [S]  [N]: ')
+sair = sair.capitalize()
+print('')
+if sair == 'S':
+    while sair == 'S':
+        numero_1 = input('Digite o primeiro número: ')
+        if numero_1.isdigit() == True:
+            numero_1 = float(numero_1)
+        else:
+            print('Digite um número válido.')
+            print('Saindo...')
+            break
+
+        sinal_operação = input(str('Digite a sua operação: (+, -. *, /): '))
+        sinais_operação = '+, -. *, /'
+        if sinal_operação not in sinais_operação:
+            print('Digite um sinal de operação válido.')
+            break
+        numero_2 = input('Digite o segundo número: ')
+        if numero_2.isdigit() == True:
+            numero_2 = float(numero_2)
+        else:
+            print('Digite um número válido.')
+            print('Saindo...')
+            break
+        if sinal_operação == '/' and numero_2 == 0:
+            print('Erro: Divisão por zero!')
+            break
+        if sinal_operação == '+':
+            operação = numero_1 + numero_2
+        elif sinal_operação == '-':
+            operação = numero_1 - numero_2
+        elif sinal_operação == '*':
+            operação = numero_1 * numero_2
+        elif sinal_operação == '/':
+            operação = numero_1 / numero_2   
+        
+        print(operação)
+        print('')
+
+        sair = input('Deseja fazer mais algum cálculo? [S]  [N]: ')
+        sair = sair.capitalize()
+        print('')
+
+elif sair == 'N':
+    print('Saindo...')
+else:
+    print('Escrita inválida, digite corretamente.')
