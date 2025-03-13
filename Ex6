@@ -1,0 +1,11 @@
+nome = input('Digite seu nome: ')
+
+indice = 0
+nome_2 = ''
+while indice < len(nome):
+    letra = nome[indice]
+    nome_2 += f'*{letra}'
+    indice += 1
+
+nome_2 += '*'
+print(nome_2)
